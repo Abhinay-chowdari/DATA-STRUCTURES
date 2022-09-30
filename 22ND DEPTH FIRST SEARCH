@@ -1,3 +1,15 @@
+#include<stdio.h>
+#include<conio.h>
+int a[20][20],reach[20],n;
+void dfs(int v) {
+	int i;
+	reach[v]=1;
+	for (i=1;i<=n;i++)
+	  if(a[v][i] && !reach[i]) {
+		printf("\n %d->%d",v,i);
+		dfs(i);
+	}
+}
 int main() 
 {
 	int i,j,count=0;
